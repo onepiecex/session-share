@@ -31,9 +31,9 @@
     </developers>
 
     <scm>
-        <connection>scm:git:https://github.com/onepiecex/session.git</connection>
-        <developerConnection>scm:git:git@github.com:onepiecex/session.git</developerConnection>
-        <url>https://github.com/onepiecex/session</url>
+        <connection>scm:git:https://github.com/onepiecex/session-share</connection>
+        <developerConnection>scm:git:git@github.com:onepiecex/session-share.git</developerConnection>
+        <url>https://github.com/onepiecex/session-share</url>
     </scm>
 
     <properties>
