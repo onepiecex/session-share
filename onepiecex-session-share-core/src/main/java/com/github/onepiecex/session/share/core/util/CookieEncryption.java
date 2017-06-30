@@ -45,7 +45,8 @@ public class CookieEncryption {
     public static CookieEncryption getInstance(String secret) {
         CookieEncryption cookieEncryption = cookieEncryptionMap.get(secret);
         if(null == cookieEncryption){
-            cookieEncryptionMap.put(secret,new CookieEncryption(secret));
+            cookieEncryption = new CookieEncryption(secret);
+            cookieEncryptionMap.put(secret,cookieEncryption);
         }
         return cookieEncryption;
     }

@@ -68,7 +68,7 @@ public class HttpSessionImpl implements HttpSession {
         applicationCookieDomain = sessionShareConfig.getDomain();
         secret = sessionShareConfig.getSecret();
         if (null == secret || secret.isEmpty()) {
-            secret = UUID.randomUUID().toString().replaceAll("-", "");
+            throw new RuntimeException("session.secret 密匙不能为空");
         } else if (secret.length() < 32) {
             throw new RuntimeException("session.secret 密匙长度不能小于32");
         }

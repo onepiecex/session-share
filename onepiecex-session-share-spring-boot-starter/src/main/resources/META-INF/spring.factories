@@ -1,1 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.github.onepiecex.session.share.spring.boot.starter.SpringSessionShareConfig
