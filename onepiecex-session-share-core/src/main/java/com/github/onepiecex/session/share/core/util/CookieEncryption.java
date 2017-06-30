@@ -40,13 +40,17 @@ public class CookieEncryption {
 
     private final Optional<SecretKeySpec> secretKeySpec;
 
-    private static volatile Map<String,CookieEncryption> cookieEncryptionMap = new ConcurrentHashMap<>();
+    private static volatile Map<String, CookieEncryption> cookieEncryptionMap = new ConcurrentHashMap<>();
 
     public static CookieEncryption getInstance(String secret) {
         CookieEncryption cookieEncryption = cookieEncryptionMap.get(secret);
-        if(null == cookieEncryption){
-            cookieEncryption = new CookieEncryption(secret);
-            cookieEncryptionMap.put(secret,cookieEncryption);
+        if (null == cookieEncryption) {
+            synchronized (CookieEncryption.class) {
+                if (null == cookieEncryption) {
+                    cookieEncryption = new CookieEncryption(secret);
+                    cookieEncryptionMap.put(secret, cookieEncryption);
+                }
+            }
         }
         return cookieEncryption;
     }

@@ -20,7 +20,7 @@
         </dependency>
 
         <dependency>
-            <groupId>com.github.onepiecex.session.share.core</groupId>
+            <groupId>com.github.onepiecex</groupId>
             <artifactId>onepiecex-session-share-core</artifactId>
         </dependency>
     </dependencies>
