@@ -55,7 +55,7 @@ session :
 ```
 自行加入Filter
 ```ruby
-RequestWrapper requestWrapper = new RequestWrapper(request,springSessionConfig);
-ResponseWrapper responseWrapper = new ResponseWrapper(response,requestWrapper);
+SessionShareRequestWrapper requestWrapper = new SessionShareRequestWrapper(request,springSessionConfig);
+SessionShareResponseWrapper responseWrapper = new SessionShareResponseWrapper(response,requestWrapper);
 chain.doFilter(requestWrapper,responseWrapper);
 ```
