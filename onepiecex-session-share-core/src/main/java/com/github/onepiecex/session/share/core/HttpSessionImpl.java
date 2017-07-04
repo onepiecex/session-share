@@ -263,7 +263,11 @@ public class HttpSessionImpl implements HttpSession {
 
     @Override
     public Object getAttribute(String name) {
-        return JackJson.parseObject(data.get(name), Object.class);
+        String val = data.get(name);
+        if(null == val || val.isEmpty()){
+            return null;
+        }
+        return JackJson.parseObject(val, Object.class);
     }
 
     @Override
