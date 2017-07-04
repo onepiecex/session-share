@@ -19,6 +19,14 @@ public class SpringSessionShareConfig implements SessionShareConfig {
     private String domain;
     private String secret;
 
+    @Bean
+    public FilterRegistrationBean filterRegistrationBean() {
+        FilterRegistrationBean registration = new FilterRegistrationBean(new SessionFilter(this));
+        registration.addUrlPatterns("/*");
+        registration.setOrder(Integer.MIN_VALUE);
+        return registration;
+    }
+
     public String getPrefix() {
         return prefix;
     }
@@ -67,15 +75,4 @@ public class SpringSessionShareConfig implements SessionShareConfig {
     public void setSecret(String secret) {
         this.secret = secret;
     }
-
-
-
-    @Bean
-    public FilterRegistrationBean filterRegistrationBean() {
-        FilterRegistrationBean registration = new FilterRegistrationBean(new SessionFilter(this));
-        registration.addUrlPatterns("/*");
-        registration.setOrder(Integer.MIN_VALUE);
-        return registration;
-    }
-
 }
