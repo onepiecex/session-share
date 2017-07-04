@@ -115,7 +115,6 @@ public class HttpSessionImpl implements HttpSession {
             Cookie cookie = getCookie();
             if (null != cookie) {
                 cookie.setMaxAge(0);
-                cookie.setPath("/");
                 httpServletResponse.addCookie(cookie);
             }
             return;
