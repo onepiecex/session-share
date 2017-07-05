@@ -107,7 +107,7 @@ public class HttpSessionImpl implements HttpSession {
     }
 
     public void save(HttpServletResponse httpServletResponse) {
-        if (!sessionDataHasBeenChanged && sessionExpireTimeInMs == null) {
+        if (!sessionDataHasBeenChanged) {
             return;
         }
         sessionDataHasBeenChanged = false;
@@ -119,7 +119,7 @@ public class HttpSessionImpl implements HttpSession {
             }
             return;
         }
-        if (sessionExpireTimeInMs != null && !data.containsKey(TIMESTAMP_KEY)) {
+        if (!data.containsKey(TIMESTAMP_KEY)) {
             data.put(TIMESTAMP_KEY, Long.toString(System.currentTimeMillis()));
         }
         try {
@@ -129,9 +129,8 @@ public class HttpSessionImpl implements HttpSession {
 
             Cookie cookie = createCookie(sessionCookieName, sign + "-" + sessionData);
 
-            if (sessionExpireTimeInMs != null) {
-                cookie.setMaxAge((int) (sessionExpireTimeInMs / 1000L));
-            }
+            cookie.setMaxAge((int) (sessionExpireTimeInMs / 1000L));
+
             httpServletResponse.addCookie(cookie);
 
         } catch (UnsupportedEncodingException unsupportedEncodingException) {
@@ -144,6 +143,8 @@ public class HttpSessionImpl implements HttpSession {
             String sessionCookieName,
             String value) {
         Cookie cookie = new Cookie(sessionCookieName, value);
+        System.out.println(getServletContext().getContextPath());
+        cookie.setPath(getServletContext().getContextPath() + "/");
         if (applicationCookieDomain != null && !applicationCookieDomain.isEmpty()) {
             cookie.setDomain(applicationCookieDomain);
         }
@@ -263,7 +264,7 @@ public class HttpSessionImpl implements HttpSession {
     @Override
     public Object getAttribute(String name) {
         String val = data.get(name);
-        if(null == val || val.isEmpty()){
+        if (null == val || val.isEmpty()) {
             return null;
         }
         return JackJson.parseObject(val, Object.class);

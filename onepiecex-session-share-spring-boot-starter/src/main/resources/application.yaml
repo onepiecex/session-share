@@ -1,0 +1,22 @@
+spring :
+  profiles :
+    active : dev
+
+  mvc :
+    static-path-pattern : /assets/**
+
+  resources :
+    static-locations : classpath:/assets/
+
+
+session :
+  http_only : false
+  #设置为true 之后 cookie 只能在 HTTPS 连接中被浏览器传递到服务器端进行会话验证
+  transferred_over_https_only : false
+  # 过期时间
+  expire_time_in_seconds : 86400
+
+  domain : localhost
+
+server:
+    port: 8080
