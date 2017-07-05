@@ -143,7 +143,6 @@ public class HttpSessionImpl implements HttpSession {
             String sessionCookieName,
             String value) {
         Cookie cookie = new Cookie(sessionCookieName, value);
-        System.out.println(getServletContext().getContextPath());
         cookie.setPath(getServletContext().getContextPath() + "/");
         if (applicationCookieDomain != null && !applicationCookieDomain.isEmpty()) {
             cookie.setDomain(applicationCookieDomain);
