@@ -25,11 +25,15 @@ public class SessionShareRequestWrapper extends HttpServletRequestWrapper {
 
     @Override
     public HttpSession getSession() {
-        return getSession(true);
+        return getShareSession(true);
     }
 
     @Override
     public HttpSession getSession(boolean create) {
+        return getShareSession(create);
+    }
+
+    private HttpSession getShareSession(boolean create) {
         if(create){
             if (null == httpSessionImpl) {
                 synchronized (this) {
