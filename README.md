@@ -25,7 +25,7 @@ session 共享 通常的做法 放入redis/memcached/jdbc/hazelcast等
 <dependency>
     <groupId>com.github.onepiecex</groupId>
     <artifactId>onepiecex-session-share-spring-boot-starter</artifactId>
-    <version>1.0</version>
+    <version>1.2</version>
 </dependency>
 ```
 配置(application.yaml)
@@ -50,7 +50,7 @@ session :
 <dependency>
   <groupId>com.github.onepiecex</groupId>
   <artifactId>onepiecex-session-share-core</artifactId>
-  <version>1.0</version>
+  <version>1.2</version>
 </dependency>
 ```
 自行加入Filter
