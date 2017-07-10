@@ -53,7 +53,18 @@ public Map<String,String> login(Session session){
     return session.getData();
 }
 ```
-
+### Session Interface
+```ruby
+public interface Session extends HttpSession {
+    String getString(String name);
+    
+    <T> T getAttribute(String name,Class<T> cls);
+    
+    <T> T getValue(String name,Class<T> cls);
+    
+    Map<String,String> getData();
+}
+```
 ## 其他框架
 ```
 <dependency>
