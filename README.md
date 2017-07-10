@@ -45,7 +45,7 @@ session :
   secret : eti8KrqgL2VYtizjeti8KrqgL2VYtizj
 ```
 
-```ruby
+```java
 @GetMapping
 public Map<String,String> login(Session session){
     session.setAttribute("uid", RandomUtils.nextInt());
@@ -54,7 +54,7 @@ public Map<String,String> login(Session session){
 }
 ```
 ### Session Interface
-```ruby
+```java
 public interface Session extends HttpSession {
     String getString(String name);
     
@@ -66,7 +66,7 @@ public interface Session extends HttpSession {
 }
 ```
 ## 其他框架
-```
+```maven
 <dependency>
   <groupId>com.github.onepiecex</groupId>
   <artifactId>onepiecex-session-share-core</artifactId>
@@ -74,7 +74,7 @@ public interface Session extends HttpSession {
 </dependency>
 ```
 自行加入Filter
-```ruby
+```java
 SessionShareRequestWrapper requestWrapper = new SessionShareRequestWrapper(request,springSessionConfig);
 SessionShareResponseWrapper responseWrapper = new SessionShareResponseWrapper(response,requestWrapper);
 chain.doFilter(requestWrapper,responseWrapper);
