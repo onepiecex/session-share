@@ -5,13 +5,13 @@
     <parent>
         <artifactId>onepiecex-session-share</artifactId>
         <groupId>com.github.onepiecex</groupId>
-        <version>1.3</version>
+        <version>1.5</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.onepiecex</groupId>
     <artifactId>onepiecex-session-share-spring-boot-starter</artifactId>
-    <version>1.3</version>
+
 
     <dependencies>
         <dependency>
@@ -27,7 +27,6 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
-            <version>4.3.9.RELEASE</version>
         </dependency>
     </dependencies>
 </project>
