@@ -18,5 +18,7 @@ session :
 
   domain : localhost
 
+  secret : eti8KrqgL2VYtizjeti8KrqgL2VYtizj
+
 server:
     port: 8080

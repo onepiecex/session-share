@@ -1,6 +1,6 @@
 package com.github.onepiecex.session.share.core.wrapper;
 
-import com.github.onepiecex.session.share.core.HttpSessionImpl;
+import com.github.onepiecex.session.share.core.SessionImpl;
 import com.github.onepiecex.session.share.core.SessionShareConfig;
 
 import javax.servlet.ServletRequest;
@@ -16,7 +16,7 @@ public class SessionShareRequestWrapper extends HttpServletRequestWrapper {
 
     private final SessionShareConfig sessionShareConfig;
 
-    private HttpSessionImpl httpSessionImpl;
+    private SessionImpl sessionImpl;
 
     public SessionShareRequestWrapper(ServletRequest request, SessionShareConfig sessionShareConfig) {
         super((HttpServletRequest) request);
@@ -35,14 +35,14 @@ public class SessionShareRequestWrapper extends HttpServletRequestWrapper {
 
     private HttpSession getShareSession(boolean create) {
         if(create){
-            if (null == httpSessionImpl) {
+            if (null == sessionImpl) {
                 synchronized (this) {
-                    if (null == httpSessionImpl) {
-                        httpSessionImpl = new HttpSessionImpl(this, sessionShareConfig);
+                    if (null == sessionImpl) {
+                        sessionImpl = new SessionImpl(this, sessionShareConfig);
                     }
                 }
             }
         }
-        return httpSessionImpl;
+        return sessionImpl;
     }
 }

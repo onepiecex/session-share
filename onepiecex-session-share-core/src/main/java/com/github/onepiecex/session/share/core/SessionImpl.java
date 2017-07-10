@@ -4,6 +4,7 @@ import com.github.onepiecex.session.share.core.util.CookieDataCodec;
 import com.github.onepiecex.session.share.core.util.CookieEncryption;
 import com.github.onepiecex.session.share.core.util.Crypto;
 import com.github.onepiecex.session.share.core.util.JackJson;
+import com.google.common.collect.ImmutableMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,9 +20,9 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * Created by wangziqing on 17/6/22.
  */
-public class HttpSessionImpl implements HttpSession {
+public class SessionImpl implements Session {
 
-    private final static Logger logger = LoggerFactory.getLogger(HttpSessionImpl.class);
+    private final static Logger logger = LoggerFactory.getLogger(SessionImpl.class);
 
     final String LAST_TIME_KEY = "___LT";
     final String ID_KEY = "___ID";
@@ -47,7 +48,7 @@ public class HttpSessionImpl implements HttpSession {
 
     private volatile Map<String, String> data = new ConcurrentHashMap<>();
 
-    public HttpSessionImpl(HttpServletRequest httpServletRequest, SessionShareConfig sessionShareConfig) {
+    public SessionImpl(HttpServletRequest httpServletRequest, SessionShareConfig sessionShareConfig) {
         this.httpServletRequest = httpServletRequest;
         this.sessionShareConfig = sessionShareConfig;
 
@@ -340,5 +341,29 @@ public class HttpSessionImpl implements HttpSession {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public String getString(String name) {
+        return data.get(name);
+    }
+
+    @Override
+    public <T> T getAttribute(String name, Class<T> cls) {
+        Object t = getAttribute(name);
+        if(null == t){
+            return null;
+        }
+        return (T)t;
+    }
+
+    @Override
+    public <T> T getValue(String name, Class<T> cls) {
+        return getAttribute(name,cls);
+    }
+
+    @Override
+    public Map<String, String> getData() {
+        return ImmutableMap.copyOf(data);
     }
 }

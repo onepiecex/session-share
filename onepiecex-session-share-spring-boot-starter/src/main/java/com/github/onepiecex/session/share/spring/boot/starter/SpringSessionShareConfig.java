@@ -5,6 +5,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.Ordered;
 
 /**
  * Created by wangziqing on 17/6/23.
@@ -23,7 +24,7 @@ public class SpringSessionShareConfig implements SessionShareConfig {
     public FilterRegistrationBean filterRegistrationBean() {
         FilterRegistrationBean registration = new FilterRegistrationBean(new SessionFilter(this));
         registration.addUrlPatterns("/*");
-        registration.setOrder(Integer.MIN_VALUE);
+        registration.setOrder(Ordered.HIGHEST_PRECEDENCE);
         return registration;
     }
 

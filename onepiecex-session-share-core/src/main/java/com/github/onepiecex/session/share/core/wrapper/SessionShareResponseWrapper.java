@@ -1,6 +1,6 @@
 package com.github.onepiecex.session.share.core.wrapper;
 
-import com.github.onepiecex.session.share.core.HttpSessionImpl;
+import com.github.onepiecex.session.share.core.SessionImpl;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.ServletResponse;
@@ -27,7 +27,7 @@ public class SessionShareResponseWrapper extends HttpServletResponseWrapper {
     private void saveSession() {
         HttpSession httpSession;
         if (null != (httpSession = sessionShareRequestWrapper.getSession(false))) {
-            ((HttpSessionImpl) httpSession).save(this);
+            ((SessionImpl) httpSession).save(this);
         }
     }
 
