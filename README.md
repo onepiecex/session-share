@@ -65,6 +65,13 @@ public interface Session extends HttpSession {
     Map<String,String> getData();
 }
 ```
+### 解密
+```java
+String data = CookieEncryption.getInstance(secret).decrypt(data)
+Map<String, String> sessionData = new HashMap();
+CookieDataCodec.decode(sessionData,data);
+```
+
 ## 其他框架
 ```maven
 <dependency>
