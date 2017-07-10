@@ -6,10 +6,9 @@
 
     <groupId>com.github.onepiecex</groupId>
     <artifactId>onepiecex-session-share</artifactId>
-    <version>1.5</version>
+    <version>1.6</version>
 
     <packaging>pom</packaging>
-
 
     <name>Onepiece.x Session-Share</name>
     <url>https://github.com/onepiecex/session-share</url>
@@ -66,6 +65,19 @@
             <name>Maven Central Staging Repository</name>
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
+
+        <!--<snapshotRepository>-->
+            <!--<id>jbg</id>-->
+            <!--<name>meicanyun Snapshot</name>-->
+            <!--<url>http://maven.chongkouwei.com/nexus/content/repositories/snapshots/</url>-->
+            <!--<uniqueVersion>true</uniqueVersion>-->
+        <!--</snapshotRepository>-->
+
+        <!--<repository>-->
+            <!--<id>jbg</id>-->
+            <!--<name>meicanyun Release</name>-->
+            <!--<url>http://maven.chongkouwei.com/nexus/content/repositories/releases/</url>-->
+        <!--</repository>-->
     </distributionManagement>
 
     <dependencyManagement>
