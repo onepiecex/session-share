@@ -18,7 +18,7 @@
         我的做法是 把session的所有数据通过AES对称加密 放入cookie中 我使用cookie来存放session的所有数据
         思想来源于ninjaframework 的 session实现
     </description>
-    
+
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
