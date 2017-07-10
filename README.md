@@ -25,7 +25,7 @@ session 共享 通常的做法 放入redis/memcached/jdbc/hazelcast等
 <dependency>
     <groupId>com.github.onepiecex</groupId>
     <artifactId>onepiecex-session-share-spring-boot-starter</artifactId>
-    <version>1.2</version>
+    <version>1.3</version>
 </dependency>
 ```
 配置(application.yaml)
@@ -45,12 +45,21 @@ session :
   secret : eti8KrqgL2VYtizjeti8KrqgL2VYtizj
 ```
 
+```ruby
+@GetMapping
+public Map<String,String> login(Session session){
+    session.setAttribute("uid", RandomUtils.nextInt());
+    Integer uid = session.getAttribute("uid",Integer.class);
+    return session.getData();
+}
+```
+
 ## 其他框架
 ```
 <dependency>
   <groupId>com.github.onepiecex</groupId>
   <artifactId>onepiecex-session-share-core</artifactId>
-  <version>1.2</version>
+  <version>1.3</version>
 </dependency>
 ```
 自行加入Filter
