@@ -45,7 +45,7 @@ session :
   secret : eti8KrqgL2VYtizjeti8KrqgL2VYtizj
 ```
 
-```ruby
+```java
 @GetMapping
 public Map<String,String> login(Session session){
     session.setAttribute("uid", RandomUtils.nextInt());
@@ -54,7 +54,7 @@ public Map<String,String> login(Session session){
 }
 ```
 ### Session Interface
-```ruby
+```java
 public interface Session extends HttpSession {
     String getString(String name);
     
@@ -66,7 +66,7 @@ public interface Session extends HttpSession {
 }
 ```
 ### 解密
-```ruby
+```java
 String data = CookieEncryption.getInstance(secret).decrypt(data)
 Map<String, String> sessionData = new HashMap();
 CookieDataCodec.decode(sessionData,data);
@@ -81,7 +81,7 @@ CookieDataCodec.decode(sessionData,data);
 </dependency>
 ```
 自行加入Filter
-```ruby
+```java
 SessionShareRequestWrapper requestWrapper = new SessionShareRequestWrapper(request,springSessionConfig);
 SessionShareResponseWrapper responseWrapper = new SessionShareResponseWrapper(response,requestWrapper);
 chain.doFilter(requestWrapper,responseWrapper);
