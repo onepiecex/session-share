@@ -4,6 +4,7 @@ session 共享 通常的做法 放入redis/memcached/jdbc/hazelcast等
 我的做法是 把session的所有数据通过AES对称加密
 放入cookie中
 我使用cookie来存放session的所有数据
+
 session里不应该存放大数据, 建议之存放一些简单的ID
 
 思想来源于[ninjaframework](https://github.com/ninjaframework/ninja) 的 session实现
