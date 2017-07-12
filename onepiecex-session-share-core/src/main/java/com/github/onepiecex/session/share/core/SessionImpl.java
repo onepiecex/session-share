@@ -263,11 +263,7 @@ public class SessionImpl implements Session {
 
     @Override
     public Object getAttribute(String name) {
-        String val = data.get(name);
-        if (null == val || val.isEmpty()) {
-            return null;
-        }
-        return JackJson.parseObject(val, Object.class);
+       return getAttribute(name,Object.class);
     }
 
     @Override
@@ -350,15 +346,16 @@ public class SessionImpl implements Session {
 
     @Override
     public <T> T getAttribute(String name, Class<T> cls) {
-        Object t = getAttribute(name);
-        if(null == t){
+        String val = data.get(name);
+        if (null == val || val.isEmpty()) {
             return null;
         }
-        return (T)t;
+        return JackJson.parseObject(val, cls);
     }
 
     @Override
     public <T> T getValue(String name, Class<T> cls) {
+
         return getAttribute(name,cls);
     }
 
