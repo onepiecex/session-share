@@ -28,7 +28,7 @@ session里不应该存放大数据, 建议只存放一些简单的ID
 <dependency>
     <groupId>com.github.onepiecex</groupId>
     <artifactId>onepiecex-session-share-spring-boot-starter</artifactId>
-    <version>1.61</version>
+    <version>1.62</version>
 </dependency>
 ```
 配置(application.yaml)
@@ -76,11 +76,11 @@ CookieDataCodec.decode(sessionData,data);
 ```
 
 ## 其他框架
-```maven
+```ruby
 <dependency>
   <groupId>com.github.onepiecex</groupId>
   <artifactId>onepiecex-session-share-core</artifactId>
-  <version>1.61</version>
+  <version>1.62</version>
 </dependency>
 ```
 自行加入Filter
