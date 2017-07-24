@@ -24,7 +24,7 @@ session里不应该存放大数据, 建议只存放一些简单的ID
 
 # 使用
 ## spring-boot
-```
+```yaml
 <dependency>
     <groupId>com.github.onepiecex</groupId>
     <artifactId>onepiecex-session-share-spring-boot-starter</artifactId>
@@ -76,7 +76,7 @@ CookieDataCodec.decode(sessionData,data);
 ```
 
 ## 其他框架
-```ruby
+```yaml
 <dependency>
   <groupId>com.github.onepiecex</groupId>
   <artifactId>onepiecex-session-share-core</artifactId>
