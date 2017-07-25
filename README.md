@@ -89,3 +89,9 @@ SessionShareRequestWrapper requestWrapper = new SessionShareRequestWrapper(reque
 SessionShareResponseWrapper responseWrapper = new SessionShareResponseWrapper(response,requestWrapper);
 chain.doFilter(requestWrapper,responseWrapper);
 ```
+
+## License
+
+Copyright (C) 2017 onepiece.x, Inc.
+
+This work is licensed under the Apache License, Version 2.0. See LICENSE for details.
