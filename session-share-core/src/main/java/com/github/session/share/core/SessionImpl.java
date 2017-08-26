@@ -119,6 +119,10 @@ public class SessionImpl implements Session {
             Cookie cookie = getCookie();
             if (null != cookie) {
                 cookie.setMaxAge(0);
+                cookie.setPath(getServletContext().getContextPath() + "/");
+                if (applicationCookieDomain != null && !applicationCookieDomain.isEmpty()) {
+                    cookie.setDomain(applicationCookieDomain);
+                }
                 httpServletResponse.addCookie(cookie);
             }
             return;
@@ -182,6 +186,19 @@ public class SessionImpl implements Session {
         if (data.containsKey(EXPIRY_TIME_KEY)) {
             itemsToIgnore++;
         }
+        if(data.containsKey(LAST_TIME_KEY)){
+            itemsToIgnore++;
+        }
+        if(data.containsKey(ID_KEY)){
+            itemsToIgnore++;
+        }
+        if(data.containsKey(CREATE_TIME_KEY)){
+            itemsToIgnore++;
+        }
+        if(data.containsKey(NEW_KEY)){
+            itemsToIgnore++;
+        }
+
         return (data.isEmpty() || data.size() == itemsToIgnore);
     }
 
