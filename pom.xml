@@ -6,7 +6,7 @@
 
     <groupId>com.github.onepiecex</groupId>
     <artifactId>onepiecex-session-share</artifactId>
-    <version>1.64</version>
+    <version>1.65</version>
 
     <packaging>pom</packaging>
 
@@ -49,35 +49,35 @@
         <slf4j.version>1.7.25</slf4j.version>
         <spring.boot.version>1.5.3.RELEASE</spring.boot.version>
         <guava.version>22.0</guava.version>
-        <sessionShareCore.version>1.64</sessionShareCore.version>
+        <sessionShareCore.version>1.65</sessionShareCore.version>
         <commonsCodec.version>1.9</commonsCodec.version>
         <spring.web.version>4.3.9.RELEASE</spring.web.version>
         <fastjson.version>1.2.35</fastjson.version>
     </properties>
 
     <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <name>Maven Central Staging Repository</name>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-
         <!--<snapshotRepository>-->
-            <!--<id>jbg</id>-->
-            <!--<name>meicanyun Snapshot</name>-->
-            <!--<url>http://maven.chongkouwei.com/nexus/content/repositories/snapshots/</url>-->
-            <!--<uniqueVersion>true</uniqueVersion>-->
+            <!--<id>ossrh</id>-->
+            <!--<url>https://oss.sonatype.org/content/repositories/snapshots</url>-->
         <!--</snapshotRepository>-->
-
         <!--<repository>-->
-            <!--<id>jbg</id>-->
-            <!--<name>meicanyun Release</name>-->
-            <!--<url>http://maven.chongkouwei.com/nexus/content/repositories/releases/</url>-->
+            <!--<id>ossrh</id>-->
+            <!--<name>Maven Central Staging Repository</name>-->
+            <!--<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>-->
         <!--</repository>-->
+
+        <snapshotRepository>
+            <id>jbg</id>
+            <name>meicanyun Snapshot</name>
+            <url>http://maven.chongkouwei.com/nexus/content/repositories/snapshots/</url>
+            <uniqueVersion>true</uniqueVersion>
+        </snapshotRepository>
+
+        <repository>
+            <id>jbg</id>
+            <name>meicanyun Release</name>
+            <url>http://maven.chongkouwei.com/nexus/content/repositories/releases/</url>
+        </repository>
     </distributionManagement>
 
     <dependencyManagement>
