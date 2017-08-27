@@ -56,28 +56,28 @@
     </properties>
 
     <distributionManagement>
-        <!--<snapshotRepository>-->
-            <!--<id>ossrh</id>-->
-            <!--<url>https://oss.sonatype.org/content/repositories/snapshots</url>-->
-        <!--</snapshotRepository>-->
-        <!--<repository>-->
-            <!--<id>ossrh</id>-->
-            <!--<name>Maven Central Staging Repository</name>-->
-            <!--<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>-->
-        <!--</repository>-->
-
         <snapshotRepository>
-            <id>jbg</id>
-            <name>meicanyun Snapshot</name>
-            <url>http://maven.chongkouwei.com/nexus/content/repositories/snapshots/</url>
-            <uniqueVersion>true</uniqueVersion>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
-
         <repository>
-            <id>jbg</id>
-            <name>meicanyun Release</name>
-            <url>http://maven.chongkouwei.com/nexus/content/repositories/releases/</url>
+            <id>ossrh</id>
+            <name>Maven Central Staging Repository</name>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
+
+        <!--<snapshotRepository>-->
+            <!--<id>jbg</id>-->
+            <!--<name>meicanyun Snapshot</name>-->
+            <!--<url>http://maven.chongkouwei.com/nexus/content/repositories/snapshots/</url>-->
+            <!--<uniqueVersion>true</uniqueVersion>-->
+        <!--</snapshotRepository>-->
+
+        <!--<repository>-->
+            <!--<id>jbg</id>-->
+            <!--<name>meicanyun Release</name>-->
+            <!--<url>http://maven.chongkouwei.com/nexus/content/repositories/releases/</url>-->
+        <!--</repository>-->
     </distributionManagement>
 
     <dependencyManagement>
